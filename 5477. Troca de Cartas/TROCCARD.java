@@ -52,41 +52,7 @@ class TROCCARD{
 				if(Arrays.binarySearch(cartasBeatriz, cartasAline[i]) < 0){
 					qtdTrocaAline++;
 				}
-				/*boolean existe = false;
-				for(int j = 0; j < qtdBeatriz; j++){
-					if(cartasAline[i] == cartasBeatriz[j]){
-						existe = true;
-						break;
-					}
-					if(cartasAline[i] < cartasBeatriz[j]){
-						break;
-					}
-				}
-				if(!existe){
-					qtdTrocaAline++;
-				}*/
 			}
-
-			/*qtdTrocaBeatriz = 0;
-			// BUSCABEATRIZ:
-			for(int i = 0; i < qtdBeatriz; i++){
-				boolean existe = false;
-				for(int j = 0; j < qtdAline; j++){
-					if(cartasBeatriz[i] == cartasAline[j]){
-						existe = true;
-						break;
-					}
-					if(cartasBeatriz[i] < cartasAline[j]){
-						if(qtdTrocaAline < qtdTrocaBeatriz){
-							break BUSCABEATRIZ;
-						}
-						break;
-					}
-				}
-				if(!existe){
-					qtdTrocaBeatriz++;
-				}
-			}*/
 
 			if(qtdTrocaAline < qtdTrocaBeatriz)
 				System.out.println(qtdTrocaAline);
