@@ -6,7 +6,6 @@ class TROCCARD{
 		int qtdAline, qtdBeatriz;
 		int[] cartasAline;
 		int[] cartasBeatriz;
-		int anterior;
 		int qtdTrocaAline, qtdTrocaBeatriz;
 		Scanner entrada = new Scanner(System.in);
 
@@ -17,32 +16,28 @@ class TROCCARD{
 			cartasBeatriz = new int[qtdBeatriz];
 			
 			cartasAline[0] = entrada.nextInt();
-			anterior = cartasAline[0];
 			for(int i = 1; i < qtdAline; i++){
 				cartasAline[i] = entrada.nextInt();
-				if(cartasAline[i] == anterior){
+				if(cartasAline[i] == cartasAline[i-1]){
 					i--;
 					qtdAline--;
-					continue;
 				}
-				anterior = cartasAline[i];
 			}
 
 			cartasBeatriz[0] = entrada.nextInt();
-			anterior = cartasBeatriz[0];
+			// anterior = cartasBeatriz[0];
 			qtdTrocaBeatriz = 0;
-			if(Arrays.binarySearch(cartasAline, anterior) < 0){
+			if(Arrays.binarySearch(cartasAline, cartasBeatriz[0]) < 0){
 					qtdTrocaBeatriz++;
 			}
 			for(int i = 1; i < qtdBeatriz; i++){
 				cartasBeatriz[i] = entrada.nextInt();
-				if(cartasBeatriz[i] == anterior){
+				if(cartasBeatriz[i] == cartasBeatriz[i-1]){
 					i--;
 					qtdBeatriz--;
 					continue;
 				}
-				anterior = cartasBeatriz[i];
-				if(Arrays.binarySearch(cartasAline, anterior) < 0){
+				if(Arrays.binarySearch(cartasAline, cartasBeatriz[i]) < 0){
 					qtdTrocaBeatriz++;
 				}
 			}
